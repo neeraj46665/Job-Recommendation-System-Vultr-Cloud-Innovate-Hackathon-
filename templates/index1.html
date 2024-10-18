@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Job Recommendation System</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
+
+    <!-- <link rel="icon" href="logo.png">  -->
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo"> <!-- Correct path for Flask -->
+        </div>
+        <h1><a href="{{ url_for('home') }}">AI-Based Job Recommendation System</a></h1>
+        <p>Powered by Vultr</p>
+    </header>
+
+
+       
+    </header>
+
+    <section class="team">
+        <h2>Team Members</h2>
+        <ul>
+            <li>Neeraj Singh: Team Leader, AI/ML Engineer</li>
+            <li>Rithik Singh: Cloud Engineer</li>
+        </ul>
+    </section>
+
+    <section class="abstract">
+        <h2>Abstract</h2>
+        <p>This project aims to build an AI-driven job recommendation system that revolutionizes how job seekers find
+            employment and how employers connect with top talent. By leveraging Vultr’s cloud services and advanced
+            machine learning techniques, the system will analyze user profiles, job descriptions, and behavioral
+            patterns to offer personalized job recommendations in real-time.</p>
+        <p>With features such as skill-gap analysis, AI-driven job matching, and real-time notifications, the platform
+            will streamline job search processes and improve the overall user experience.</p>
+    </section>
+
+    <section class="problem-statement">
+        <h2>Problem Statement</h2>
+        <p>Existing job portals lack personalization and effective job matching, often overwhelming users with
+            irrelevant job postings. The process of connecting job seekers with appropriate opportunities is
+            time-consuming, and many platforms fail to provide targeted recommendations that align with user profiles
+            and preferences.</p>
+    </section>
+
+    <section class="solution">
+        <h2>Proposed Solution</h2>
+        <p>The AI-Based Job Recommendation System will solve this issue by implementing an AI-driven recommendation
+            engine that matches users to jobs based on their profiles, resumes, and activity on the platform.</p>
+        <ul>
+            
+            <li>Hybrid Recommendation System: Combining collaborative and content-based filtering.</li>
+            <li>Skill-Gap Analysis: Recommending relevant skills to enhance employability.</li>
+            
+            
+        </ul>
+    </section>
+
+    <section class="vultr-services">
+        <h2>Use of Vultr Services</h2>
+        <ul>
+            <li>Compute Instances: Running machine learning models and real-time recommendation services.</li>
+            <li>Managed Databases: Storing user profiles, job data, and interaction logs.</li>
+            <li>Object Storage: Managing resumes, job descriptions, and user-uploaded data.</li>
+            <li>Block Storage: Backup and data persistence for secure information management.</li>
+            <li>Vultr Kubernetes Engine: Scaling the platform to accommodate a growing user base.</li>
+            <li>Load Balancers: Ensuring high availability and performance for the recommendation system.</li>
+        </ul>
+    </section>
+
+    <section class="target-audience">
+        <h2>Target Audience</h2>
+        <ul>
+            <li>Job Seekers: Individuals actively looking for job opportunities.</li>
+            <li>Employers/Recruiters: Companies searching for candidates who meet specific job criteria.</li>
+            <li>Educational Institutions: Helping students and graduates identify career opportunities.</li>
+        </ul>
+    </section>
+
+    <section class="outcomes">
+        <h2>Expected Outcomes</h2>
+        <ul>
+            <li>Successfully matching job seekers with suitable job opportunities.</li>
+            <li>Improving job search efficiency and user satisfaction.</li>
+            <li>Assisting employers in screening candidates with AI-powered recommendations.</li>
+            <li>Establishing a scalable, cloud-based platform capable of supporting a large user base.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AI-Based Job Recommendation System Team. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

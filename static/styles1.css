@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef;
+    /* Light grey background */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #007bff;
+    /* Bootstrap primary color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #0056b3;
+    /* Slightly darker border */
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 2.5em;
+    /* Increased font size for title */
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    /* Larger subtitle size */
+    color: #0056b3;
+    /* Darker blue for headings */
+}
+/* Remove the underline and style the link */
+h1 a {
+    text-decoration: none;
+    /* Removes the underline */
+    color: #333;
+    /* Changes the color to dark gray or any color you prefer */
+    font-family: 'Arial', sans-serif;
+    /* Font style */
+    font-size: 36px;
+    /* Size of the text */
+    font-weight: bold;
+    /* Make the text bold */
+    transition: color 0.3s ease;
+    /* Smooth color change on hover */
+}
+
+/* Add hover effect for better interactivity */
+h1 a:hover {
+    color: #ffffff;
+    /* Changes the color on hover (you can choose your own) */
+    text-decoration: underline;
+    /* Optionally add an underline on hover */
+}
+section {
+    background: #ffffff;
+    /* White background for sections */
+    padding: 20px;
+    margin: 20px auto;
+    /* Centering with auto margin */
+    border-radius: 10px;
+    /* Rounded corners */
+    max-width: 800px;
+    /* Limit the width */
+}
+
+p,
+ul {
+    font-size: 1.1em;
+    /* Slightly larger text for better readability */
+    margin-bottom: 15px;
+    /* Spacing between paragraphs and lists */
+}
+
+ul {
+    list-style-type: disc;
+    /* Default list style */
+    padding-left: 20px;
+    /* Padding for lists */
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #343a40;
+    /* Dark grey footer */
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    /* Space above footer */
+}
+
+footer p {
+    font-size: 0.9em;
+    /* Slightly smaller text for footer */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+        /* Responsive title size */
+    }
+
+    h2 {
+        font-size: 1.5em;
+        /* Responsive subtitle size */
+    }
+
+    section {
+        padding: 15px;
+    }
+}
