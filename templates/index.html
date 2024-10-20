@@ -6,166 +6,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Recommendation System</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #e3f2fd;
-            color: #333;
-            margin: 0;
-            padding: 0;
-           
-        }
+    
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e3f2fd;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        header h1 {
-            font-size: 3em;
-            color: #0d47a1;
-            margin: 0;
-        }
+header h1 {
+    font-size: 2.5em;
+    color: #0d47a1;
+    margin: 0;
+}
 
-        form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
 
-        form input[type="file"],
-        form input[type="submit"] {
-            padding: 12px 20px;
-            border: 2px solid #0d47a1;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+form input[type="file"],
+form input[type="submit"] {
+    padding: 12px 20px;
+    border: 2px solid #0d47a1;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
 
-        form input[type="file"]:hover {
-            background-color: #bbdefb;
-        }
+form input[type="file"]:hover {
+    background-color: #bbdefb;
+}
 
-        form input[type="submit"] {
-            background-color: #0d47a1;
-            color: white;
-            margin-left: 10px;
-        }
+form input[type="submit"] {
+    background-color: #0d47a1;
+    color: white;
+}
 
-        form input[type="submit"]:hover {
-            background-color: #1565c0;
-        }
+form input[type="submit"]:hover {
+    background-color: #1565c0;
+}
 
-        .job-list {
-            list-style-type: none;
-            padding: 0;
-        }
+.job-list {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .job-list li {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 10px 0;
-            background: #fafafa;
-            border-radius: 8px;
-            transition: box-shadow 0.3s;
-        }
+.job-list li {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px 0;
+    background: #fafafa;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
 
-        .job-list li:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
+.job-list li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.job-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .job-header div {
-            flex: 1;
-        }
+.job-header div {
+    flex: 1;
+    min-width: 100px;
+    margin: 5px 0;
+}
 
-        .toggle-description,
-        .analyze-button,
-        .hide-button {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
+.toggle-description,
+.analyze-button,
+.hide-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
 
-        .toggle-description:hover,
-        .analyze-button:hover,
-        .hide-button:hover {
-            background-color: #388e3c;
-        }
+.toggle-description:hover,
+.analyze-button:hover,
+.hide-button:hover {
+    background-color: #388e3c;
+}
 
-        .job-description {
-            display: none;
-            padding: 20px;
-            border-top: 1px solid #ddd;
-            background: #fff;
-            border-radius: 5px;
-            margin-top: 10px;
-            white-space: pre-wrap;
-            line-height: 1.6;
-        }
+.job-description {
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 14px;
-        }
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
 
-        .logo {
-            display: block;
-            margin: 0 auto 20px;
-            width: 150px;
-            height: auto;
-        }
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 150px;
+    height: auto;
+}
 
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 4px solid #3498db;
-            width: 20px;
-            height: 20px;
-            animation: spin 2s linear infinite;
-            display: none;
-            margin-left: 10px;
-        }
+.loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    display: none;
+    margin-left: 10px;
+}
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+a {
+    color: #0d47a1;
+    text-decoration: none;
+}
 
-        /* Hover effects for links */
-        a {
-            color: #0d47a1;
-            text-decoration: none;
-        }
+a:hover {
+    text-decoration: underline;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .job-header div {
+        min-width: 100%;
+        margin: 5px 0;
+    }
+
+    .toggle-description,
+    .analyze-button,
+    .hide-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .toggle-description,
+    .analyze-button,
+    .hide-button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    form input[type="file"],
+    form input[type="submit"] {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+
     </style>
 </head>
 
@@ -190,20 +242,17 @@
                 <li>
                     <div class="job-header">
                         <div>
-                            <strong>Position:</strong>
-                            <span>{{ job.Position }}</span>
+                            <strong>Position:</strong> <span>{{ job.Position }}</span>
                         </div>
                         <div>
-                            <strong>Company:</strong>
-                            <span>{{ job.Company }}</span>
+                            <strong>Company:</strong> <span>{{ job.Company }}</span>
                         </div>
                         <div>
-                            <strong>Location:</strong>
-                            <span>{{ job.Location.replace('â€“', '').strip() }}</span>
+                            <strong>Location:</strong> <span>{{ job.Location.replace('â€“', '').strip() }}</span>
                         </div>
                         <div>
-                            <strong>URL:</strong>
-                            <a href="{{ job.url }}" target="_blank">(Click here for registration)</a>
+                            <strong>URL:</strong> <a href="{{ job.url }}" target="_blank">(Click here for
+                                registration)</a>
                         </div>
                     </div>
                     <button class="toggle-description">Show Job Description</button>
@@ -216,7 +265,7 @@
                         <button type="submit" class="analyze-button">Analyze Candidate</button>
                         <div class="loader"></div>
                     </form>
-                    <div class="analysis-results">
+                    <div class="analysis-results" style="display: none;">
                         <h3>Analysis Results:</h3>
                         <p class="result-text"></p>
                         <button class="hide-button">Hide Results</button>
@@ -233,8 +282,9 @@
     <footer>
         <p>&copy; 2024 Job Recommendation System. All rights reserved.</p>
     </footer>
-
     <script>
+        const analysisResultsCache = {};
+
         document.querySelectorAll('.toggle-description').forEach(button => {
             button.addEventListener('click', function () {
                 const content = this.nextElementSibling;
@@ -246,11 +296,20 @@
             form.addEventListener('submit', function (event) {
                 event.preventDefault(); // Prevent the form from submitting normally
                 const formData = new FormData(this);
+                const jobDescription = formData.get('job_description');
                 const resultContainer = this.nextElementSibling;
-                const hideButton = resultContainer.querySelector('.hide-button');
                 const loader = this.querySelector('.loader');
+                const hideButton = resultContainer.querySelector('.hide-button');
 
-                // Show loading spinner
+                // Check if result is already cached
+                if (analysisResultsCache[jobDescription]) {
+                    resultContainer.style.display = 'block';
+                    resultContainer.querySelector('.result-text').innerText = analysisResultsCache[jobDescription];
+                    hideButton.style.display = 'inline-block'; // Show hide button
+                    return;
+                }
+
+                // Show loader
                 loader.style.display = 'inline-block';
 
                 // Clear any previous results
@@ -263,14 +322,20 @@
                 })
                     .then(response => response.json())
                     .then(data => {
-                        loader.style.display = 'none'; // Hide loading spinner
+                        // Hide loader
+                        loader.style.display = 'none';
+
+                        // Cache the result
+                        analysisResultsCache[jobDescription] = data.analysis_results;
+
                         resultContainer.style.display = 'block';
                         resultContainer.querySelector('.result-text').innerText = data.analysis_results;
                         hideButton.style.display = 'inline-block'; // Show hide button
                     })
                     .catch(error => {
                         console.error('Error:', error);
-                        loader.style.display = 'none'; // Hide loader on error
+                        // Hide loader even if there's an error
+                        loader.style.display = 'none';
                     });
             });
         });
