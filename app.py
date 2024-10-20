@@ -12,6 +12,7 @@ from flask import Flask, jsonify, request
 from dotenv import load_dotenv
 
 app = Flask(__name__)
+#
 
 # Load the job data from the CSV file
 job_data = pd.read_csv('job_final.csv')
