@@ -3,7 +3,7 @@ FROM python:3.11-slim
 
 # Set the working directory inside the container
 WORKDIR /app
-COPY .env /app/.env
+
 # Copy requirements.txt first for better caching of dependencies
 COPY requirements.txt requirements.txt
 
@@ -13,6 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire application to the container
 COPY . .
 
+# Create the .env file inside the container with the API key passed from GitHub Actions
+ARG COHERE_API_KEY
+RUN echo "COHERE_API_KEY=$COHERE_API_KEY" > /app/.env
+
 # Expose the port the app runs on
 EXPOSE 5000
 
@@ -21,5 +25,3 @@ ENV FLASK_RUN_HOST=0.0.0.0
 
 # Command to run the application
 CMD ["python", "app.py"]
-
-
