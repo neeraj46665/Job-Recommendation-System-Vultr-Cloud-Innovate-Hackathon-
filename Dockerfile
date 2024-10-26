@@ -18,7 +18,7 @@ ARG COHERE_API_KEY
 ARG VULTR_CLOUD_INFERENCE_API_KEY 
 # Create .env file with the API keys
 RUN echo "COHERE_API_KEY=${COHERE_API_KEY}" >> /app/.env && \
-    echo "VULTR_CLOUD_INFERENCE_API_KEY=${VULTR_CLOUD_INFERENCE_API_KEY}" >> /app/.env
+    RUN echo "VULTR_CLOUD_INFERENCE_API_KEY=\"${VULTR_CLOUD_INFERENCE_API_KEY}\"" >> /app/.env
 
 # Expose the port the app runs on
 EXPOSE 5000
