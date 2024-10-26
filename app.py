@@ -107,7 +107,8 @@ def analyze():
 
 
 VULTR_CLOUD_INFERENCE_API_KEY=os.getenv('VULTR_CLOUD_INFERENCE_API_KEY')
-api_key = VULTR_CLOUD_INFERENCE_API_KEY  
+api_key = {{secrets.VULTR_CLOUD_INFERENCE_API_KEY}}
+api_key=str(api_key)
 
 # Initialize a history list to keep track of messages
 history = []
