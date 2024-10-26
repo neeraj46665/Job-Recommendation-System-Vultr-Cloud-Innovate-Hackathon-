@@ -17,8 +17,7 @@ COPY . .
 ARG COHERE_API_KEY
 
 
-RUN echo "COHERE_API_KEY=${COHERE_API_KEY}" >> /app/.env &&
-    
+RUN echo "COHERE_API_KEY=${COHERE_API_KEY}" >> /app/.env
 
 # Expose the port the app runs on
 EXPOSE 5000
