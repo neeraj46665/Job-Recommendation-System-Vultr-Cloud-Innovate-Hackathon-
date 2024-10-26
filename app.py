@@ -21,7 +21,7 @@ job_data = pd.read_csv('job_final.csv')
 vectorizer = TfidfVectorizer()
 
 # Initialize the Cohere language model
-os.environ['COHERE_API_KEY'] = "KvGZ0eKX47kOPlZOPfAyFNyeQRx0ZC35MwZhJdbz"
+os.environ['COHERE_API_KEY']=os.getenv('COHERE_API_KEY')
 chat_prompt_template = ChatPromptTemplate.from_template("""
 You are an AI assistant that helps employers screen candidates based on resumes and job descriptions. Your task is to analyze the following:
 Job Description:{job_description}
